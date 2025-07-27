@@ -117,6 +117,46 @@
 
 
 
+.text-stroke {
+  color: white; /* 字体颜色 */
+  -webkit-text-stroke: 0.5px black; /* 黑色描边 */
+}
+
+.stats-container {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.stat-box {
+  background-color: #f3f3f3; /* 背景颜色 */
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  min-width: 180px;
+  text-align: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.stat-box:hover {
+  background-color: #d1ccb5; /* hover 时变深色 */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* 加强阴影 */
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #222;
+}
+
+.stat-text {
+  font-size: 1rem;
+  color: #555;
+}
+
 
 
 /*-----------------------------------*\
