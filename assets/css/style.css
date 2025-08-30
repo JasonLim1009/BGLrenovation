@@ -2181,3 +2181,26 @@ textarea.input-field {
   }
 
 }
+
+
+.img-box {
+  position: relative;
+  display: inline-block;
+}
+
+.img-box img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.img-box .publish-date {
+  position: absolute;
+  top: 16px;   /* 调整上下位置 */
+  left: 16px;    /* 调整左右位置 */
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 20px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
