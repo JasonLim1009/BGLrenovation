@@ -376,7 +376,7 @@
             <li>
               <div class="service-card">
 
-                <a href="#" class="has-before hover:shine">
+                <a class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 185; --height: 236;">
                     <img src="./assets/images/pspanel.jpeg" width="285" height="336" loading="lazy" alt="PS PANEL"
                       class="img-cover">
@@ -400,7 +400,7 @@
             <li>
               <div class="service-card">
 
-                <a href="#" class="has-before hover:shine">
+                <a class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
                     <img src="./assets/images/pupanel.jpeg" width="285" height="336" loading="lazy" alt="PU PANEL"
                       class="img-cover">
@@ -424,7 +424,7 @@
             <li>
               <div class="service-card">
 
-                <a href="#" class="has-before hover:shine">
+                <a class="has-before hover:shine">
                   <figure class="card-banner img-holder" style="--width: 285; --height: 336;">
                     <img src="./assets/images/cabinet.jpeg" width="285" height="336" loading="lazy" alt="ION PAINT"
                       class="img-cover">
@@ -1136,21 +1136,32 @@
             Subscribe us & Get <span class="span">15% Off.</span>
           </p>
 
-          <form action="" class="input-wrapper">
+          <form id="subscribe-form" class="input-wrapper">
             <div class="icon-wrapper">
               <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
-
-              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field">
+              <input type="email" id="user-email" placeholder="Your email" required class="input-field">
             </div>
 
             <button type="submit" class="btn btn-secondary">
               <span class="text text-1">Subscribe</span>
-
               <span class="text text-2" aria-hidden="true">Subscribe</span>
             </button>
           </form>
 
         </div>
+
+
+        <script>
+          document.getElementById('subscribe-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const userEmail = document.getElementById('user-email').value;
+            const subject = encodeURIComponent('咨询 BGL 一站式装修服务');
+            const body = encodeURIComponent(`我要了解【BGL一站式装修服务】\n 客户邮箱: userEmail`);
+            window.location.href = `mailto:bglrenovation@email.com?subject={subject}&body=${body}`;
+          });
+        </script>
+
+
 
         <ul class="footer-list">
 
