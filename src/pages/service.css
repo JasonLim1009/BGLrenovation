@@ -1,0 +1,76 @@
+.gallery-anchor {
+  scroll-margin-top: 120px;
+}
+
+.swiper-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 每行三个 */
+  gap: 20px;
+  justify-items: center; /* 水平居中 */
+  margin: 30px auto;
+  max-width: 1200px; /* 最大宽度 */
+}
+
+/* the frame owns the sizing/aspect-ratio; the Swiper inside just fills it.
+   Swiper measures its own height on init - if aspect-ratio + height:auto is
+   put directly on the Swiper root, it can measure 0px before the browser
+   has resolved the aspect-ratio, which is what caused the black gap on
+   mobile. Giving the outer frame a real height (or aspect-ratio) and letting
+   Swiper be 100%/100% inside it avoids that. */
+.gallery-swiper-frame {
+  width: 350px;
+  height: 450px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8f8f8;
+}
+
+.gallery-swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-swiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.gallery-swiper .img-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.gallery-swiper .publish-date {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* 平板 (<= 992px)：2栏 */
+@media (max-width: 992px) {
+  .swiper-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .gallery-swiper-frame {
+    width: 300px;
+    height: 400px;
+  }
+}
+
+/* 手机 (<= 600px)：1栏 */
+@media (max-width: 600px) {
+  .swiper-grid {
+    grid-template-columns: 1fr;
+  }
+  .gallery-swiper-frame {
+    width: 90%;
+    height: 340px; /* explicit height instead of aspect-ratio + auto, so Swiper always gets a real number on mobile */
+  }
+}

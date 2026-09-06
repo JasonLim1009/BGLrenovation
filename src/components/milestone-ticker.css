@@ -1,0 +1,82 @@
+.milestone-ticker {
+  display: flex;
+  align-items: center;
+  background-color: #0b1426;
+  border-top: 1px solid rgba(212, 175, 55, 0.3);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.3);
+  overflow: hidden;
+  font-family: "IBM Plex Mono", "Courier New", monospace;
+}
+
+.milestone-ticker-label {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #d4af37;
+  color: #0b1426;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  z-index: 1;
+}
+
+.milestone-ticker-demo-tag {
+  font-size: 9px;
+  padding: 1px 6px;
+  border-radius: 4px;
+  background-color: rgba(11, 20, 38, 0.15);
+}
+
+.milestone-ticker-track-wrapper {
+  flex: 1;
+  overflow: hidden;
+}
+
+.milestone-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: milestone-scroll 35s linear infinite;
+}
+
+.milestone-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes milestone-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.milestone-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 24px;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
+  font-size: 13px;
+  color: #fff;
+}
+
+.milestone-ticker-cat {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.milestone-ticker-count {
+  font-weight: 700;
+  color: #fff;
+}
+
+.milestone-ticker-delta.up { color: #4ade80; }
+.milestone-ticker-delta.down { color: #f87171; }
+.milestone-ticker-delta.flat { color: rgba(255, 255, 255, 0.5); }
+
+@media (max-width: 600px) {
+  .milestone-ticker-item {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+}
